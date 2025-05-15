@@ -82,7 +82,8 @@ def get_districts():
       'type': 'rur',
       'call_type': 'ser',
     }
-    response = requests.post(URL,data=payload,headers=headers)
+    
+    response = requests.post(URL,data=payload,headers=headers,timeout=(6, 10))
     if response.status_code == 200:
         districts = response.json()
         return jsonify(districts)
