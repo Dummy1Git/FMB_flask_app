@@ -33,7 +33,7 @@ def pdf_bytes_to_base64(pdf_bytes):
     return base64.b64encode(pdf_bytes).decode("utf-8")
 
 def edit_pdf(pdf_bytes):
-  doc = fitz.open(stream=pdf_bytes, filetype="pdf")
+  doc = pymupdf.open(stream=pdf_bytes, filetype="pdf")
   page = doc.load_page(0)
   
   content = page.get_drawings()
