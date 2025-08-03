@@ -53,7 +53,7 @@ def edit_pdf(pdf_bytes):
   #block = image_blocks[0] #qr code at the bottom right
   #bbox = block["bbox"]
   #page.add_redact_annot(bbox, fill=(0, 0, 0,0))
-  #page.apply_redactions()
+  page.apply_redactions()
   
   return doc.write()
 
@@ -187,4 +187,5 @@ def download():
 if __name__ == "__main__" :
     app.run()
     
+
 
