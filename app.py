@@ -38,22 +38,22 @@ def edit_pdf(pdf_bytes):
   
   content = page.get_drawings()
   rect_1 = content[-17]['rect']   # date on the left side
-  rect_2 = content[-13]['rect']   # rest are from right side
-  rect_3 = content[-14]['rect']
-  rect_4 = content[-15]['rect']
+  #rect_2 = content[-13]['rect']   # rest are from right side
+  #rect_3 = content[-14]['rect']
+  #rect_4 = content[-15]['rect']
   
   page.add_redact_annot(rect_1,fill=(0,0,0,0))
-  page.add_redact_annot(rect_2,fill=(0,0,0,0))
-  page.add_redact_annot(rect_3,fill=(0,0,0,0))
-  page.add_redact_annot(rect_4,fill=(0,0,0,0))
+  #page.add_redact_annot(rect_2,fill=(0,0,0,0))
+  #page.add_redact_annot(rect_3,fill=(0,0,0,0))
+  #page.add_redact_annot(rect_4,fill=(0,0,0,0))
 
-  image_list = page.get_images(full=True)
+  #image_list = page.get_images(full=True)
 
-  image_blocks = page.get_text("dict")["blocks"]
-  block = image_blocks[0] #qr code at the bottom right
-  bbox = block["bbox"]
-  page.add_redact_annot(bbox, fill=(0, 0, 0,0))
-  page.apply_redactions()
+  #image_blocks = page.get_text("dict")["blocks"]
+  #block = image_blocks[0] #qr code at the bottom right
+  #bbox = block["bbox"]
+  #page.add_redact_annot(bbox, fill=(0, 0, 0,0))
+  #page.apply_redactions()
   
   return doc.write()
 
@@ -187,3 +187,4 @@ def download():
 if __name__ == "__main__" :
     app.run()
     
+
